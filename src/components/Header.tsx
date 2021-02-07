@@ -1,12 +1,6 @@
-import PropTypes from 'prop-types'
-import { useLocation } from 'react-router-dom'
-import Button from './Button'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
-/*interface Props {
-    title?: string
-}
-*/
+import Button from 'components/Button'
 
 interface HeaderProps {
   title: string
@@ -37,10 +31,6 @@ const Header = ({ title, onAdd, showAdd }: HeaderProps) => {
       </div>
     </header>
   )
-}
-
-Header.defaultProps = {
-  title: 'EXERCISE',
 }
 
 export default Header
