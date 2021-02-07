@@ -37,25 +37,22 @@
   }
 }
 
-
-
-.user-profile img{
+.user-profile img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-
 /* MAPS */
-.map-container{
-  display:flex;
+.map-container {
+  display: flex;
   position: relative;
 }
-.map { 
+.map {
   width: 100%;
   height: calc(100vh - 200px); /*without this the map doesn't show anything*/
-}		
+}
 
 .leaflet-container {
   height: inherit;
@@ -73,14 +70,13 @@
   width: 30px !important;
   height: 30px !important;
   background-color: rgba(110, 204, 57);
-    box-shadow: 0px 0px 10px green;
+  box-shadow: 0px 0px 10px green;
   text-align: center;
-  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font: 12px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background-clip: padding-box;
-      border-radius: 20px;
+  border-radius: 20px;
   line-height: 30px;
   cursor: pointer;
-
 
   background-image: url(https://rentitfurnished.com/vancouver/wp-content/plugins/facetwp-map-facet-cf/assets/img/cluster40.png);
   background-position: center;
@@ -89,10 +85,10 @@
   position: absolute;
   font-size: 11px;
   font-family: Arial, sans-serif;
-  font-weight: bold;		
+  font-weight: bold;
 }
 
-.property-price{
+.property-price {
   background-color: #bc3b3b;
   border-radius: 4px;
   color: #fff;
@@ -102,14 +98,14 @@
   text-align: center;
   text-decoration: none;
   box-shadow: 0 3px 2px rgb(0 0 0 / 30%);
-  background-image: linear-gradient(to bottom,#000 .2,#000 0);
+  background-image: linear-gradient(to bottom, #000 0.2, #000 0);
   background-repeat: repeat-x;
   position: relative;
   display: block;
   width: fit-content;
 }
 
-.arrow{
+.arrow {
   border-top-color: #bc3b3b;
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -121,7 +117,7 @@
   height: 0;
   position: absolute;
   width: 0;
-  transform: translateX(-50%);	
+  transform: translateX(-50%);
 }
 .gm-style .gm-style-iw-c {
   position: absolute;
@@ -129,7 +125,7 @@
   overflow: hidden;
   top: 0;
   left: 0;
-  transform: translate(-50%,-100%);
+  transform: translate(-50%, -100%);
   background-color: white;
   border-radius: 8px;
   padding: 12px;
@@ -145,25 +141,25 @@
   box-sizing: border-box;
   overflow: auto;
   overflow: scroll;
-    max-height: 269px;
+  max-height: 269px;
 }
 .infowindow-content {
   width: 250px;
-  line-height: .9;
+  line-height: 0.9;
   overflow: none;
 }
 .infowindow-content p {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   text-align: left;
 }
 .infowindow-content .infowindow-image img {
   width: 250px;
   max-width: none;
   display: block;
-    height: auto;
+  height: auto;
 }
 
-a{
+a {
   text-decoration: none;
   color: #bc3b3b !important;
   line-height: 13px;
@@ -173,8 +169,8 @@ h1 a {
   color: black !important;
 }
 
-a:hover{
-  opacity: .7;
+a:hover {
+  opacity: 0.7;
 }
 
 #search-on-map-move {
@@ -196,7 +192,7 @@ a:hover{
   margin: 0 auto;
 }
 
-#loading{
+#loading {
   background-image: url('https://img1.picmix.com/output/stamp/normal/8/5/2/9/509258_fb107.gif');
   width: 120px;
   height: 120px;
