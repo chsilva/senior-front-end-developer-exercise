@@ -1,5 +1,5 @@
+import { useCallback } from 'react'
 import axios from 'axios'
-import React, { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 function MyDropzone({ userProfileID }: any) {
@@ -43,4 +43,4 @@ function MyDropzone({ userProfileID }: any) {
   )
 }
 
-export default MyDropzone
+export { MyDropzone }

@@ -2,6 +2,12 @@
   "translation": {
     "header": {
       "title": "EXERCISE"
+    },
+    "filters": {
+      "title": "Filters"
+    },
+    "map": {
+      "searchOnMove": "Search on map move"
     }
   }
 }

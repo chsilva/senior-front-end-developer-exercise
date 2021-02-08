@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import Header from 'components/Header'
-import Footer from 'components/Footer'
-import UserProfiles from 'components/UserProfiles'
-import BaseMap from 'components/BaseMap'
-import PropertyData from 'components/PropertyData'
+// COMPONENTS
+import { Header, Footer, Routes } from 'components'
+
+// I18N
+import { useTranslation } from 'react-i18next'
 import setupI18n from 'i18n/utils'
 
+// STYLES
 import './App.css'
 
 setupI18n()
@@ -17,17 +17,14 @@ function App() {
 
   return (
     <Router>
-      <div className="container">
+      <div className="Container">
         <Header
           title={t('header.title')}
           onAdd={() => {
             console.log('lalala')
           }}
         />
-
-        <Route path="/" exact component={BaseMap} />
-        <Route path="/user-profiles" component={UserProfiles} />
-        <Route path="/property/:id" component={PropertyData} />
+        <Routes />
         <Footer />
       </div>
     </Router>

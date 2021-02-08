@@ -1,0 +1,50 @@
+.PropertyMarker {
+  &__price {
+    background-color: #bc3b3b;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 800;
+    max-width: 100px;
+    padding: 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to bottom, #000 0.2, #000 0);
+    background-repeat: repeat-x;
+    position: relative;
+    display: block;
+    width: fit-content;
+
+    &::after {
+      position: absolute;
+      content: ' ';
+      border-top-color: #bc3b3b;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-width: 6px 6px 0;
+      top: 100%;
+      left: 50%;
+      border-style: solid;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.PropertyMarkerPopup {
+  width: 250px;
+  line-height: 0.9;
+  overflow: none;
+
+  &__title {
+    margin-bottom: 0.5em;
+    text-align: left;
+  }
+
+  &__image {
+    width: 250px;
+    max-width: none;
+    display: block;
+    height: auto;
+  }
+}

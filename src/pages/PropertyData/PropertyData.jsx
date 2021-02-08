@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
-const PropertyData = () => {
+function PropertyData() {
   const { id } = useParams()
 
   useEffect(() => {
@@ -29,11 +29,11 @@ const PropertyData = () => {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}> {id}</h2>
-      <div id="local-content-widget">
+      <div className="PropertyData">
         <div id="loading"></div>
       </div>
     </div>
   )
 }
 
-export default PropertyData
+export { PropertyData }

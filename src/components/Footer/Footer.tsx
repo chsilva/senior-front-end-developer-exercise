@@ -2,9 +2,12 @@ import { Link } from 'react-router-dom'
 
 import { changeLanguage } from 'i18n/utils'
 
-const Footer = () => {
+// STYLES
+import './Footer.scss'
+
+function Footer() {
   return (
-    <footer>
+    <footer className="Footer">
       <p>Copyright &copy; 2021</p>
       <Link to="/user-profiles">About</Link>
       <div>
@@ -15,4 +18,5 @@ const Footer = () => {
     </footer>
   )
 }
-export default Footer
+
+export { Footer }

@@ -1,8 +1,20 @@
-import { useState, useEffect } from 'react'
-import { LatLng, Point, LatLngTuple, divIcon } from 'leaflet'
+import { useState } from 'react'
+import { LatLng, Point, divIcon } from 'leaflet'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
-import PropertyMarker from './PropertyMarker'
+import { useTranslation } from 'react-i18next'
+
+// COMPONENTS
+import { PropertyMarker } from 'components'
+
+// CONTAINERS
+import { Filters } from 'containers'
+
+// TYPES
+import { Property } from 'components/PropertyMarker/types'
+
+// STYLES
+import './BaseMap.scss'
 
 function MapEvents() {
   const map = useMapEvents({
@@ -26,20 +38,15 @@ function MapEvents() {
       )
     },
   })
+
   return null
 }
 
-export interface Property {
-  position: LatLngTuple
-  price: string
-  description?: string
-  imgUrl?: URL
-  url?: URL
-}
-
-const BaseMap = () => {
+function BaseMap() {
+  const { t } = useTranslation()
   const [properties, setProperties] = useState<Property[]>([
     {
+      id: '889026fd-d86b-4b64-8b03-b1bc0ac09af6',
       position: [49.28634216910997, -123.11940420180999],
       price: '2,996',
       description:
@@ -52,6 +59,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: '175cb33b-4321-44d8-badd-41c2cb97d4bd',
       position: [49.28034216910997, -123.11940420180999],
       price: '3,400',
       description:
@@ -64,6 +72,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: '8f9c9774-98ff-42d4-adf4-f26744232d00',
       position: [49.28634216910997, -123.128],
       price: '3,195',
       description:
@@ -76,6 +85,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: 'e83328fe-1bcc-4551-b93b-0daccc7596e1',
       position: [49.27634216910997, -123.11940420180999],
       price: '4,050',
       description:
@@ -88,6 +98,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: 'c09500c5-ce40-4dfb-a64e-40f5edf17c76',
       position: [49.27034216910997, -123.11940420180999],
       price: '4,160',
       description:
@@ -100,6 +111,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: '7b6ac96c-6581-415c-a19a-3a45404bb389',
       position: [49.27634216910997, -123.128],
       price: '3,295',
       description:
@@ -112,6 +124,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: '9b001443-dceb-47f8-85f7-77ab4320738b',
       position: [49.26634216910997, -123.10940420180999],
       price: '2,995',
       description:
@@ -124,6 +137,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: '2a513a7e-68e8-4bab-910a-fb250abf3db2',
       position: [49.26034216910997, -123.10940420180999],
       price: '3,595',
       description:
@@ -136,6 +150,7 @@ const BaseMap = () => {
       ),
     },
     {
+      id: '590eecf4-f991-4da0-a47b-29c2aeeff75c',
       position: [49.26634216910997, -123.118],
       price: '2,995',
       description:
@@ -160,7 +175,7 @@ const BaseMap = () => {
       const n = cluster.getChildCount()
       return divIcon({
         html: n,
-        className: 'mycluster',
+        className: 'MapContainer__cluster',
         iconSize: new Point(40, 40),
       })
     },
@@ -186,9 +201,9 @@ const BaseMap = () => {
   }
 
   return (
-    <div className="map-container">
-      <div className="filters">here comes the filters</div>
-      <div className="map">
+    <div className="BaseMap">
+      <Filters />
+      <div className="BaseMap__map">
         <MapContainer center={position} zoom={15} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -200,15 +215,14 @@ const BaseMap = () => {
               <PropertyMarker key={index} {...property} />
             ))}
           </MarkerClusterGroup>
-          ;
         </MapContainer>
-        <div id="search-on-map-move">
-          <input type="checkbox" />
-          Search on map move
-        </div>
+      </div>
+      <div className="BaseMap__searchOnMove">
+        <input type="checkbox" />
+        {t('map.searchOnMove')}
       </div>
     </div>
   )
 }
 
-export default BaseMap
+export { BaseMap }

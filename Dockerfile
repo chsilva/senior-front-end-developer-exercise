@@ -1,6 +1,7 @@
 FROM node:latest
-RUN mkdir -p /usr/src/webapp
-WORKDIR /usr/src/webapp
+RUN mkdir -p /app
+WORKDIR /app
+COPY . /app
 
 RUN npm install
 

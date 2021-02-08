@@ -1,23 +1,22 @@
 import { Link, useLocation } from 'react-router-dom'
 
-import Button from 'components/Button'
+// COMPONENTS
+import { Button } from 'components'
 
-interface HeaderProps {
-  title: string
-  onAdd: () => void
-  showAdd?: boolean
-}
+// TYPES
+import { Props as HeaderProps } from './types'
 
-const Header = ({ title, onAdd, showAdd }: HeaderProps) => {
+// STYLES
+import './Header.scss'
+
+function Header(props: HeaderProps) {
+  const { title, onAdd, showAdd } = props
   const location = useLocation()
 
   return (
-    <header className="header">
+    <header className="Header">
       <h1>
-        <div>
-          <Link to="/">{title}</Link>
-          <input type="search" style={{ margin: '30px' }} />
-        </div>
+        <Link to="/">{title}</Link>
       </h1>
       <div>
         <span>Create a Listing | Live Chat | FAQ | Contact</span>
@@ -33,4 +32,4 @@ const Header = ({ title, onAdd, showAdd }: HeaderProps) => {
   )
 }
 
-export default Header
+export { Header }

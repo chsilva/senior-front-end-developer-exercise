@@ -2,6 +2,12 @@
   "translation": {
     "header": {
       "title": "EXERCICE"
+    },
+    "filters": {
+      "title": "Filtres"
+    },
+    "map": {
+      "searchOnMove": "Rechercher sur la carte déplacer"
     }
   }
 }
