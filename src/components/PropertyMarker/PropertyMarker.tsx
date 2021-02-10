@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { divIcon, DivIcon } from 'leaflet'
+import { divIcon, DivIcon, LatLng } from 'leaflet'
 import { Marker, Popup } from 'react-leaflet'
 
 // TYPES
-import { Property } from './types'
+import { Property } from 'store/types'
 
 // STYLES
 import './PropertyMarker.scss'
@@ -21,7 +21,10 @@ function PropertyMarker(property: Property): JSX.Element {
   }
 
   return (
-    <Marker position={property.position} icon={getPropertyIcon(property)}>
+    <Marker
+      position={new LatLng(property.position[0], property.position[1])}
+      icon={getPropertyIcon(property)}
+    >
       <Popup>
         <div className="PropertyMarkerPopup">
           <p className="PropertyMarkerPopup__title">

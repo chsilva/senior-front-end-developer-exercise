@@ -1,4 +1,5 @@
 export * from './Filters'
 export * from './FormLoginModal'
 export * from './Header'
+export * from './Map'
 export * from './Routes'
