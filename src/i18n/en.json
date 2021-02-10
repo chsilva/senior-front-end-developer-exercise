@@ -3,6 +3,15 @@
     "header": {
       "title": "EXERCISE"
     },
+    "formLoginModal": {
+      "title": "LOGIN",
+      "inputUsername": "Username",
+      "inputUsernameError": "Please input your username!",
+      "inputPassword": "Password",
+      "inputPasswordError": "Please input your password!",
+      "btnOkText": "Submit",
+      "btnCancelText": "Cancel"
+    },
     "filters": {
       "title": "Filters"
     },

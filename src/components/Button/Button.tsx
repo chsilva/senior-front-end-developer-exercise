@@ -6,7 +6,7 @@ import { Props as ButtonProps } from './types'
 // STYLES
 import './Button.scss'
 
-function Button(props: ButtonProps) {
+function Button(props: ButtonProps): JSX.Element {
   const { color, text, block, onClick } = props
 
   const buttonClasses = classnames('Button', {

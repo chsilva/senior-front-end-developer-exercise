@@ -6,7 +6,7 @@ import fr from './fr.json'
 
 type Languages = 'en' | 'fr'
 
-function setupI18n() {
+function setupI18n(): void {
   let lng = window.localStorage.getItem('lng')
 
   if (!lng) {
@@ -24,7 +24,7 @@ function setupI18n() {
   })
 }
 
-function changeLanguage(lng: Languages) {
+function changeLanguage(lng: Languages): void {
   i18n.changeLanguage(lng)
   window.localStorage.setItem('lng', lng)
 }

@@ -5,7 +5,7 @@ import { changeLanguage } from 'i18n/utils'
 // STYLES
 import './Footer.scss'
 
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <footer className="Footer">
       <p>Copyright &copy; 2021</p>

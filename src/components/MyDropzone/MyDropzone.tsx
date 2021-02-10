@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import axios from 'axios'
 import { useDropzone } from 'react-dropzone'
 
-function MyDropzone({ userProfileID }: any) {
+function MyDropzone({ userProfileID }: any): JSX.Element {
   const onDrop = useCallback((acceptedFiles) => {
     // Do something with the files
     const file = acceptedFiles[0]

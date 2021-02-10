@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { divIcon } from 'leaflet'
+import { divIcon, DivIcon } from 'leaflet'
 import { Marker, Popup } from 'react-leaflet'
 
 // TYPES
@@ -8,8 +8,8 @@ import { Property } from './types'
 // STYLES
 import './PropertyMarker.scss'
 
-function PropertyMarker(property: Property) {
-  const getPropertyIcon = (property: Property) => {
+function PropertyMarker(property: Property): JSX.Element {
+  const getPropertyIcon = (property: Property): DivIcon => {
     return divIcon({
       className: 'PropertyMarker',
       html: `

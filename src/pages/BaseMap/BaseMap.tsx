@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { LatLng, Point, divIcon } from 'leaflet'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 import { useTranslation } from 'react-i18next'
+import axios from 'axios'
 
 // COMPONENTS
 import { PropertyMarker } from 'components'
@@ -16,7 +17,7 @@ import { Property } from 'components/PropertyMarker/types'
 // STYLES
 import './BaseMap.scss'
 
-function MapEvents() {
+function MapEvents(): JSX.Element | null {
   const map = useMapEvents({
     click: () => {
       map.locate()
@@ -42,127 +43,19 @@ function MapEvents() {
   return null
 }
 
-function BaseMap() {
+function BaseMap(): JSX.Element {
   const { t } = useTranslation()
-  const [properties, setProperties] = useState<Property[]>([
-    {
-      id: '889026fd-d86b-4b64-8b03-b1bc0ac09af6',
-      position: [49.28634216910997, -123.11940420180999],
-      price: '2,996',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: '175cb33b-4321-44d8-badd-41c2cb97d4bd',
-      position: [49.28034216910997, -123.11940420180999],
-      price: '3,400',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: '8f9c9774-98ff-42d4-adf4-f26744232d00',
-      position: [49.28634216910997, -123.128],
-      price: '3,195',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: 'e83328fe-1bcc-4551-b93b-0daccc7596e1',
-      position: [49.27634216910997, -123.11940420180999],
-      price: '4,050',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: 'c09500c5-ce40-4dfb-a64e-40f5edf17c76',
-      position: [49.27034216910997, -123.11940420180999],
-      price: '4,160',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: '7b6ac96c-6581-415c-a19a-3a45404bb389',
-      position: [49.27634216910997, -123.128],
-      price: '3,295',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: '9b001443-dceb-47f8-85f7-77ab4320738b',
-      position: [49.26634216910997, -123.10940420180999],
-      price: '2,995',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: '2a513a7e-68e8-4bab-910a-fb250abf3db2',
-      position: [49.26034216910997, -123.10940420180999],
-      price: '3,595',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-    {
-      id: '590eecf4-f991-4da0-a47b-29c2aeeff75c',
-      position: [49.26634216910997, -123.118],
-      price: '2,995',
-      description:
-        'Vancouver Furnished Condo Rental – Amazing 1 Bed, 1 Bath plus Large Private Patio and Fireplace in Excellent Gastown Location',
-      imgUrl: new URL(
-        'https://rentitfurnished.com/vancouver/wp-content/uploads/sites/2/2020/07/7-13-350x245.jpg'
-      ),
-      url: new URL(
-        'https://rentitfurnished.com/vancouver/property/vancouver-furnished-condo-rental-3vc/'
-      ),
-    },
-  ])
+  const [properties, setProperties] = useState<Property[]>([])
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      const { data } = await axios.get('/api/property')
+
+      setProperties(data)
+    }
+
+    fetchProperties()
+  }, [])
 
   const position: LatLng = new LatLng(49.27634216910997, -123.11940420180999)
   const markerClusterProps = {

@@ -31,13 +31,18 @@
   }
 
   &__searchOnMove {
-    padding: 10px;
-    border: 1px solid gray;
     position: absolute;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-around;
+
+    padding: 10px;
     top: 25px;
-    z-index: 9999;
-    background: #bc3b3b;
     right: 25px;
+
+    background: #bc3b3b;
     color: white;
     font-family: Arial;
     box-shadow: 0px 0px 6px red;

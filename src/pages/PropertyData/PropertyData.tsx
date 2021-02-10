@@ -1,8 +1,19 @@
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
-function PropertyData() {
-  const { id } = useParams()
+declare global {
+  interface Window {
+    LL_SDK_IS_READY?: boolean
+    locallogic: any
+  }
+}
+
+interface ParamsProps {
+  id: string
+}
+
+function PropertyData(): JSX.Element {
+  const { id } = useParams<ParamsProps>()
 
   useEffect(() => {
     //var llSdkInterval = window.setInterval(function () {

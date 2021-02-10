@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 // STYLES
 import './Filters.scss'
 
-function Filters() {
+function Filters(): JSX.Element {
   const { t } = useTranslation()
 
   return (
