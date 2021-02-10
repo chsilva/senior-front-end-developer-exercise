@@ -1,3 +1,14 @@
 .Footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 120px;
   text-align: center;
+
+  &__lang {
+    span {
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
 }

@@ -5,6 +5,19 @@ import { Filter } from 'store/types'
 class PropertyService {
   static getProperties(filter: Filter) {
     const filterString = Object.entries(filter)
+      .filter(([key, value]) => {
+        if (Array.isArray(value)) {
+          if (value.length > 0) {
+            return true
+          }
+        } else {
+          if (value) {
+            return true
+          }
+
+          return false
+        }
+      })
       .map(([key, value]) => key + '=' + value)
       .join('&')
 
@@ -16,7 +29,6 @@ class PropertyService {
     })
   }
 
-  // static doLogout(token: string) {
   static getProperty(id: string) {
     return new Promise((resolve, reject) => {
       axios

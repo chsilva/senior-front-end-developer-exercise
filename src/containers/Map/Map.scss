@@ -1,6 +1,6 @@
 .Map {
   position: relative;
-  width: 70%;
+  width: 60%;
   height: calc(100vh - 200px); /*without this the map doesn't show anything*/
 
   &__cluster {

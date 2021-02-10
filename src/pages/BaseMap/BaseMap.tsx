@@ -38,13 +38,15 @@ function BaseMap(): JSX.Element {
 
   return (
     <div className="BaseMap">
-      <Filters />
       {currentLocation && (
-        <Map
-          properties={properties}
-          currentLocation={currentLocation}
-          loading={loading}
-        />
+        <>
+          <Filters loading={loading} currentLocation={currentLocation} />
+          <Map
+            properties={properties}
+            currentLocation={currentLocation}
+            loading={loading}
+          />
+        </>
       )}
     </div>
   )

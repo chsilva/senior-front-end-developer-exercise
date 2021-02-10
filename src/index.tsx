@@ -7,10 +7,13 @@ import reportWebVitals from './reportWebVitals'
 import 'antd/dist/antd.css'
 import './index.scss'
 
+// https://github.com/ant-design/ant-design/issues/22493
+// some components of `antd` is throwing a console error
+// this is a workaround but I think this is not the best way to deal with it
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <App />,
+  // </React.StrictMode>,
   document.getElementById('root')
 )
 

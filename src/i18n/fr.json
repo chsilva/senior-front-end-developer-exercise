@@ -13,7 +13,25 @@
       "btnCancelText": "Annuler"
     },
     "filters": {
-      "title": "Filtres"
+      "title": "Filtres",
+      "pets": {
+        "title": "Animaux",
+        "noPets": "Animaux Non Autorisés",
+        "mayBeConsidered": "Peut Être Considéré",
+        "petFriendly": "Animaux Acceptés"
+      },
+      "rentalType": {
+        "title": "Type de Location",
+        "furnished": "Meublée",
+        "unfurnished": "Non Meublé"
+      },
+      "price": {
+        "title": "Prix"
+      },
+      "keywords": {
+        "title": "Mot-clé"
+      },
+      "submitButton": "Filtre"
     },
     "map": {
       "searchOnMove": "Rechercher sur la carte déplacer"

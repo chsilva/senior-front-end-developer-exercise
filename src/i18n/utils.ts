@@ -25,6 +25,10 @@ function setupI18n(): void {
 }
 
 function changeLanguage(lng: Languages): void {
+  const currentLanguage = i18n.language
+
+  if (lng === currentLanguage) return
+
   i18n.changeLanguage(lng)
   window.localStorage.setItem('lng', lng)
 }

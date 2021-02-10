@@ -15,7 +15,7 @@ import setupI18n from 'i18n/utils'
 import store from 'store'
 
 // STYLES
-import './App.css'
+import './App.scss'
 
 setupI18n()
 

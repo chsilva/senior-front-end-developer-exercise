@@ -23,8 +23,8 @@ export type PropertyDuckActionType = PropertyOwnDuckActionType &
   DefaultActionTypes
 
 export interface Filter {
-  minPrice?: string
-  maxPrice?: string
+  min?: number
+  max?: number
   lat?: number
   lng?: number
   zoom?: number

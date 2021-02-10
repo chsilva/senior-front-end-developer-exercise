@@ -13,7 +13,25 @@
       "btnCancelText": "Cancel"
     },
     "filters": {
-      "title": "Filters"
+      "title": "Filters",
+      "pets": {
+        "title": "Pets",
+        "noPets": "No Pets Allowed",
+        "mayBeConsidered": "May Be Considered",
+        "petFriendly": "Ped Friendly"
+      },
+      "rentalType": {
+        "title": "Rental Type",
+        "furnished": "Furnished",
+        "unfurnished": "Unfurnished"
+      },
+      "price": {
+        "title": "Price"
+      },
+      "keywords": {
+        "title": "Keyword"
+      },
+      "submitButton": "Filter"
     },
     "map": {
       "searchOnMove": "Search on map move"
