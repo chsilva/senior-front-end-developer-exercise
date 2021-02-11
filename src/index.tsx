@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
-import 'antd/dist/antd.css'
+import 'antd/lib/style/themes/default.less'
+import 'antd/dist/antd.less'
 import './index.scss'
 
 // https://github.com/ant-design/ant-design/issues/22493
