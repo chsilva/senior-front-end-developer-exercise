@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
+    "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
@@ -16,6 +17,7 @@
     "antd": "^4.12.2",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "craco-less": "^1.17.1",
     "i18next": "^19.8.7",
     "leaflet": "^1.7.1",
     "node-sass": "^5.0.0",
@@ -36,9 +38,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "json-server": "json-server --watch ./server/db.json --routes ./server/routes.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run json-server\""

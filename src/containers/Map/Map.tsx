@@ -4,7 +4,7 @@ import { Point, divIcon } from 'leaflet'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 import { useTranslation } from 'react-i18next'
-import { Spin } from 'antd'
+import { Spin, Checkbox } from 'antd'
 
 // STORE
 import { Creators as PropertyCreators } from 'store/sagas/property'
@@ -128,14 +128,14 @@ function Map(props: Props): JSX.Element {
         </MapContainer>
         {renderLoading()}
       </div>
-      <div className="SearchOnMove">
-        <input
+      <label className="SearchOnMove">
+        <Checkbox
           type="checkbox"
           defaultChecked={searchOnMove}
           onChange={(): void => setSearchOnMove(!searchOnMove)}
         />
         {t('map.searchOnMove')}
-      </div>
+      </label>
     </>
   )
 }
