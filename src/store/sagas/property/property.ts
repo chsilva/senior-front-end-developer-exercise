@@ -13,6 +13,7 @@ import { PropertySagaActionType } from 'store/types'
 export const { Types, Creators } = createActions(
   {
     requestProperties: ['filter'],
+    requestProperty: ['id'],
   },
   { prefix: '@SAGA/' }
 )
@@ -35,6 +36,23 @@ function* requestProperties({ filter }: PropertySagaActionType): Generator {
   }
 }
 
-const takes = [takeLatest(Types.REQUEST_PROPERTIES, requestProperties)]
+function* requestProperty({ id }: PropertySagaActionType): Generator {
+  yield put(PropertyCreators.setPropertyLoading({ loading: true }))
+  try {
+    const propertiesResponse: any = yield call(PropertyService.getProperty, id)
+    console.log(propertiesResponse)
+    yield delay(1000)
+    yield put(PropertyCreators.setProperty({ property: propertiesResponse }))
+  } catch (e) {
+    // error handling
+  } finally {
+    yield put(PropertyCreators.setPropertyLoading({ loading: false }))
+  }
+}
+
+const takes = [
+  takeLatest(Types.REQUEST_PROPERTIES, requestProperties),
+  takeLatest(Types.REQUEST_PROPERTY, requestProperty),
+]
 
 export default takes

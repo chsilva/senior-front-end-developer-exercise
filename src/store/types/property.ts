@@ -13,6 +13,7 @@ export interface Property {
 export interface PropertyState {
   loading: boolean
   properties: Property[]
+  property: Property | null
 }
 
 interface PropertyOwnDuckActionType {
@@ -33,6 +34,7 @@ export interface Filter {
 interface PropertySagaOwnActionType {
   properties: Property[]
   filter: Filter
+  id: string
 }
 
 export type PropertySagaActionType = PropertySagaOwnActionType & PutEffect

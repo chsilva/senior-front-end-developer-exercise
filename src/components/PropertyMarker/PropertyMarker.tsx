@@ -14,7 +14,7 @@ function PropertyMarker(property: Property): JSX.Element {
       className: 'PropertyMarker',
       html: `
         <span class="PropertyMarker__price">
-          ${property.price}
+          $&nbsp;${property.price}
         </span>
       `,
     })

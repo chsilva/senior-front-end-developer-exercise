@@ -1,2 +1,48 @@
 .PropertyData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 2em;
+    line-height: 1em;
+    max-width: 960px;
+    text-align: center;
+
+    margin: 24px auto;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    span {
+      font-size: 3em;
+      font-weight: bold;
+      color: #bc3c3b;
+
+      small {
+        color: #000;
+        font-weight: normal;
+        font-size: 0.5em;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__map {
+    position: relative;
+    width: 100%;
+    height: 400px !important;
+  }
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+  }
 }

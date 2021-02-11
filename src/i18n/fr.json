@@ -35,6 +35,10 @@
     },
     "map": {
       "searchOnMove": "Rechercher sur la carte déplacer"
+    },
+    "propertyData": {
+      "priceMonth": "/mois",
+      "propertyLocation": "Emplacement de la propriété"
     }
   }
 }
